@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      body {
+        background-color: #4CAF50;
+        background-position: center;
+        background-size: cover;
+        animation-name: example;
+        animation-duration: 15s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      @keyframes example {
+        0% {
+          background-color: #4CAF50;
+        }
+        50% {
+          background-color: #f44336;
+        }
+        100% {
+          background-color: #4CAF50;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my beautiful page!</h1>
+    <p>Here is some example text.</p>
+    <h1>Login</h1>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="POST" action="">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      <input type="submit" value="Login">
+    </form>
+  </body>
+</html>

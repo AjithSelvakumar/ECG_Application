@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Protected Page</title>
+  </head>
+  <body>
+    <h1>Welcome, {{ username }}!</h1>
+    <p>Here is some patient information:</p>
+    <ul>
+      <li>Patient Name: John Doe</li>
+      <li>DOB: 01/01/1980</li>
+      <li>Gender: Male</li>
+    </ul>
+    <p>Here is the ECG data:</p>
+    <img src="{{ url_for('static', filename='ecg.jpg') }}" alt="ECG Data" width="300" height="300">
+
+    <div>
+      <button><a href="{{ url_for('download') }}">Download</a></button>
+      <button><a href="{{ url_for('static', filename='ecg.pdf') }}" target="_blank">View</a></button>
+
+      <button><a href="/login">Log out</a></button>
+    </div>
+
+    <style>
+      button {
+        margin: 10px;
+      }
+
+      div {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </body>
+</html>
